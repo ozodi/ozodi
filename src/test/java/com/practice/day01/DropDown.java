@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class DropDown {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -20,8 +20,11 @@ public class DropDown {
 
         WebElement dropdownLink = driver.findElement(By.linkText("Dropdown link"));
 
+        Thread.sleep(2000);
+
         dropdownLink.click();
 
+        Thread.sleep(2000);
         WebElement itemGoogle = driver.findElement(By.linkText("Google"));
 
         itemGoogle.click();
